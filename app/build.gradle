@@ -3,6 +3,11 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 23
     buildToolsVersion "25.0.2"
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
     defaultConfig {
         applicationId "com.sdp.panda.gaodemaptestdemo"
         minSdkVersion 15
@@ -26,4 +31,7 @@ dependencies {
     })
     compile 'com.android.support:appcompat-v7:24.2.1'
     testCompile 'junit:junit:4.12'
+    compile files('libs/AMap_Location_V3.3.0_20170118.jar')
+    compile files('libs/Android_Map3D_SDK_V5.0.0_20170311.jar')
+    compile 'com.jakewharton:butterknife:6.1.0'
 }
